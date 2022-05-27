@@ -88,4 +88,4 @@ Tree.Write(tree, (node, level) => Console.Write(node.Text), (node, level) => nod
 
 ## Resources
 
-See the [API reference](.\docs\ConsoleTree.md) and the [ConsoleTree.Demo](.\src\ConsoleTree.Demo) application to learn how to customize indentation, maximum depth, type of connectors and colors.
+See the [API reference](./docs/ConsoleTree.md) and the [ConsoleTree.Demo](./src/ConsoleTree.Demo) application to learn how to customize indentation, maximum depth, type of connectors and colors.
