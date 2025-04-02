@@ -23,30 +23,20 @@
 
 namespace ConsoleTree.Demo;
 
-internal enum TaxonomicRankCategory
+internal class Bookshelf : List<BookSeries>;
+
+internal class BookSeries
 {
-	Family,
-	Subfamily,
-	Genus,
-	Species,
-	Subspecies,
+	public required string Name { get; init; }
+
+	public required string Author { get; init; }
+
+	public List<Book> Books { get; init; } = [];
 }
 
-internal class TaxonomicRank : ITreeNode
+internal class Book
 {
-	public TaxonomicRankCategory Category { get; init; } = TaxonomicRankCategory.Species;
+	public required string Title { get; init; }
 
-	public string? Name { get; init; }
-
-	public List<TaxonomicRank> Members { get; init; } = [];
-
-	public IEnumerable<ITreeNode> GetNodes()
-	{
-		return Members;
-	}
-
-	public override string ToString()
-	{
-		return $"{Category}: {Name}";
-	}
+	public int Published { get; init; }
 }

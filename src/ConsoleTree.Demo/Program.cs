@@ -29,180 +29,296 @@ var taxonomy = new TaxonomicRank
 {
 	Category = TaxonomicRankCategory.Family,
 	Name = "Felidae",
-	Members = new List<TaxonomicRank>
-	{
-		new()
+	Members =
+	[
+		new TaxonomicRank
 		{
 			Category = TaxonomicRankCategory.Subfamily,
 			Name = "Felinae",
-			Members = new List<TaxonomicRank>
-			{
-				new()
+			Members =
+			[
+				new TaxonomicRank
 				{
 					Category = TaxonomicRankCategory.Genus,
 					Name = "Acinonyx",
-					Members = new List<TaxonomicRank>
-					{
-						new() {Name = "Acinonyx jubatus"},
-					},
+					Members =
+					[
+						new TaxonomicRank { Name = "Acinonyx jubatus" },
+					],
 				},
-				new()
+
+				new TaxonomicRank
 				{
 					Category = TaxonomicRankCategory.Genus,
 					Name = "Caracal",
-					Members = new List<TaxonomicRank>
-					{
-						new() {Name = "Caracal aurata"},
-						new() {Name = "Caracal caracal"},
-					},
+					Members =
+					[
+						new TaxonomicRank { Name = "Caracal aurata" },
+						new TaxonomicRank { Name = "Caracal caracal" },
+					],
 				},
-				new()
+
+				new TaxonomicRank
 				{
 					Category = TaxonomicRankCategory.Genus,
 					Name = "Catopuma",
-					Members = new List<TaxonomicRank>
-					{
-						new() {Name = "Catopuma badia"},
-						new() {Name = "Catopuma temminckii"},
-					},
+					Members =
+					[
+						new TaxonomicRank { Name = "Catopuma badia" },
+						new TaxonomicRank { Name = "Catopuma temminckii" },
+					],
 				},
-				new()
+
+				new TaxonomicRank
 				{
 					Category = TaxonomicRankCategory.Genus,
 					Name = "Felis",
-					Members = new List<TaxonomicRank>
-					{
-						new() {Name = "Felis bieti"},
-						new() {Name = "Felis chaus"},
-						new() {Name = "Felis margarita"},
-						new() {Name = "Felis manul"},
-						new() {Name = "Felis nigripes"},
-						new()
+					Members =
+					[
+						new TaxonomicRank { Name = "Felis bieti" },
+						new TaxonomicRank { Name = "Felis chaus" },
+						new TaxonomicRank { Name = "Felis margarita" },
+						new TaxonomicRank { Name = "Felis manul" },
+						new TaxonomicRank { Name = "Felis nigripes" },
+						new TaxonomicRank
 						{
 							Name = "Felis silvestris",
-							Members = new List<TaxonomicRank>
-							{
-								new()
+							Members =
+							[
+								new TaxonomicRank
 								{
 									Category = TaxonomicRankCategory.Subspecies,
 									Name = "Felis silvestris catus",
 								},
-							},
+							],
 						},
-					},
+					],
 				},
-				new()
+
+				new TaxonomicRank
 				{
 					Category = TaxonomicRankCategory.Genus,
 					Name = "Herpailurus",
-					Members = new List<TaxonomicRank>
-					{
-						new() {Name = "Herpailurus yagouaroundi"},
-					},
+					Members =
+					[
+						new TaxonomicRank { Name = "Herpailurus yagouaroundi" },
+					],
 				},
-				new()
+
+				new TaxonomicRank
 				{
 					Category = TaxonomicRankCategory.Genus,
 					Name = "Leopardus",
-					Members = new List<TaxonomicRank>
-					{
-						new() {Name = "Leopardus colocolo"},
-						new() {Name = "Leopardus geoffroyi"},
-						new() {Name = "Leopardus guigna"},
-						new() {Name = "Leopardus jacobitus"},
-						new() {Name = "Leopardus pajeros"},
-						new() {Name = "Leopardus pardalis"},
-						new() {Name = "Leopardus tigrinus"},
-						new() {Name = "Leopardus wiedii"},
-					},
+					Members =
+					[
+						new TaxonomicRank { Name = "Leopardus colocolo" },
+						new TaxonomicRank { Name = "Leopardus geoffroyi" },
+						new TaxonomicRank { Name = "Leopardus guigna" },
+						new TaxonomicRank { Name = "Leopardus jacobitus" },
+						new TaxonomicRank { Name = "Leopardus pajeros" },
+						new TaxonomicRank { Name = "Leopardus pardalis" },
+						new TaxonomicRank { Name = "Leopardus tigrinus" },
+						new TaxonomicRank { Name = "Leopardus wiedii" },
+					],
 				},
-				new()
+
+				new TaxonomicRank
 				{
 					Category = TaxonomicRankCategory.Genus,
 					Name = "Leptailurus",
-					Members = new List<TaxonomicRank>
-					{
-						new() {Name = "Leptailurus serval"},
-					},
+					Members =
+					[
+						new TaxonomicRank { Name = "Leptailurus serval" },
+					],
 				},
-				new()
+
+				new TaxonomicRank
 				{
 					Category = TaxonomicRankCategory.Genus,
 					Name = "Lynx",
-					Members = new List<TaxonomicRank>
-					{
-						new() {Name = "Lynx lynx"},
-						new() {Name = "Lynx pardinus"},
-						new() {Name = "Lynx rufus"},
-						new() {Name = "Lynx canadensis"},
-					},
+					Members =
+					[
+						new TaxonomicRank { Name = "Lynx lynx" },
+						new TaxonomicRank { Name = "Lynx pardinus" },
+						new TaxonomicRank { Name = "Lynx rufus" },
+						new TaxonomicRank { Name = "Lynx canadensis" },
+					],
 				},
-				new()
+
+				new TaxonomicRank
 				{
 					Category = TaxonomicRankCategory.Genus,
 					Name = "Pardofelis",
-					Members = new List<TaxonomicRank>
-					{
-						new() {Name = "Pardofelis marmorata"},
-					},
+					Members =
+					[
+						new TaxonomicRank { Name = "Pardofelis marmorata" },
+					],
 				},
-				new()
+
+				new TaxonomicRank
 				{
 					Category = TaxonomicRankCategory.Genus,
 					Name = "Prionailurus",
-					Members = new List<TaxonomicRank>
-					{
-						new() {Name = "Prionailurus bengalensis"},
-						new() {Name = "Prionailurus iriomotensis"},
-						new() {Name = "Prionailurus planiceps"},
-						new() {Name = "Prionailurus rubiginosus"},
-						new() {Name = "Prionailurus viverrinus"},
-					},
+					Members =
+					[
+						new TaxonomicRank { Name = "Prionailurus bengalensis" },
+						new TaxonomicRank { Name = "Prionailurus iriomotensis" },
+						new TaxonomicRank { Name = "Prionailurus planiceps" },
+						new TaxonomicRank { Name = "Prionailurus rubiginosus" },
+						new TaxonomicRank { Name = "Prionailurus viverrinus" },
+					],
 				},
-				new()
+
+				new TaxonomicRank
 				{
 					Category = TaxonomicRankCategory.Genus,
 					Name = "Puma",
-					Members = new List<TaxonomicRank>
-					{
-						new() {Name = "Puma concolor"},
-					},
+					Members =
+					[
+						new TaxonomicRank { Name = "Puma concolor" },
+					],
 				},
-			},
+			],
 		},
-		new()
+
+		new TaxonomicRank
 		{
 			Category = TaxonomicRankCategory.Subfamily,
 			Name = "Pantherinae",
-			Members = new List<TaxonomicRank>
-			{
-				new()
+			Members =
+			[
+				new TaxonomicRank
 				{
 					Category = TaxonomicRankCategory.Genus,
 					Name = "Neofelis",
-					Members = new List<TaxonomicRank>
-					{
-						new() {Name = "Neofelis diardi"},
-						new() {Name = "Neofelis nebulosa"},
-					},
+					Members =
+					[
+						new TaxonomicRank { Name = "Neofelis diardi" },
+						new TaxonomicRank { Name = "Neofelis nebulosa" },
+					],
 				},
-				new()
+
+				new TaxonomicRank
 				{
 					Category = TaxonomicRankCategory.Genus,
 					Name = "Panthera",
-					Members = new List<TaxonomicRank>
-					{
-						new() {Name = "Panthera leo"},
-						new() {Name = "Panthera onca"},
-						new() {Name = "Panthera pardus"},
-						new() {Name = "Panthera tigris"},
-						new() {Name = "Panthera uncia"},
-					},
+					Members =
+					[
+						new TaxonomicRank { Name = "Panthera leo" },
+						new TaxonomicRank { Name = "Panthera onca" },
+						new TaxonomicRank { Name = "Panthera pardus" },
+						new TaxonomicRank { Name = "Panthera tigris" },
+						new TaxonomicRank { Name = "Panthera uncia" },
+					],
 				},
-			},
+			],
 		},
+	],
+};
+
+var bookshelf = new Bookshelf
+{
+	new BookSeries
+	{
+		Name = "The Hitchhiker's Guide to the Galaxy",
+		Author = "Douglas Adams",
+		Books =
+		[
+			new Book
+			{
+				Title = "Life, the Universe and Everything",
+				Published = 1982,
+			},
+			new Book
+			{
+				Title = "Mostly Harmless",
+				Published = 1992,
+			},
+			new Book
+			{
+				Title = "So Long, and Thanks for All the Fish",
+				Published = 1984,
+			},
+			new Book
+			{
+				Title = "The Hitchhiker's Guide to the Galaxy",
+				Published = 1979,
+			},
+			new Book
+			{
+				Title = "The Restaurant at the End of the Universe",
+				Published = 1980,
+			},
+		],
+	},
+	new BookSeries
+	{
+		Name = "Dune",
+		Author = "Frank Herbert",
+		Books =
+		[
+			new Book
+			{
+				Title = "Chapterhouse: Dune",
+				Published = 1985,
+			},
+			new Book
+			{
+				Title = "Children of Dune",
+				Published = 1976,
+			},
+			new Book
+			{
+				Title = "Dune",
+				Published = 1965,
+			},
+			new Book
+			{
+				Title = "Dune Messiah",
+				Published = 1969,
+			},
+			new Book
+			{
+				Title = "God Emperor of Dune",
+				Published = 1981,
+			},
+			new Book
+			{
+				Title = "Heretics of Dune",
+				Published = 1984,
+			},
+		],
+	},
+	new BookSeries
+	{
+		Name = "The Lord of the Rings",
+		Author = "J. R. R. Tolkien",
+		Books =
+		[
+			new Book
+			{
+				Title = "The Fellowship of the Ring",
+				Published = 1954,
+			},
+			new Book
+			{
+				Title = "The Return of the King",
+				Published = 1955,
+			},
+			new Book
+			{
+				Title = "The Two Towers",
+				Published = 1954,
+			},
+		],
 	},
 };
+
+var tree = new Tree(new DisplaySettings { IndentSize = 5 })
+	.EnumNodes<Bookshelf, BookSeries>((node, _) => node.OrderBy(series => series.Name))
+	.WriteNode<BookSeries>((node, _) => Console.Write($"{node.Name} by {node.Author}"))
+	.EnumNodes<BookSeries, Book>((node, _) => node.Books.OrderBy(book => book.Published))
+	.WriteNode<Book>((node, _) => Console.Write($"{node.Title} ({node.Published})"));
 
 if (args.Length == 1)
 {
@@ -282,15 +398,22 @@ if (args.Length == 1)
 		);
 		return;
 	}
+
+	if ("fluent".Equals(args[0], StringComparison.InvariantCultureIgnoreCase))
+	{
+		tree.Write(bookshelf);
+		return;
+	}
 }
 
 Console.WriteLine($"Usage: {AppDomain.CurrentDomain.FriendlyName} <option>");
 Console.WriteLine();
 Console.WriteLine("Where <option> is one of:");
 Console.WriteLine();
-Console.WriteLine("basics         Displays the tree with the default settings.");
-Console.WriteLine("levels         Displays the tree with a maximum of three levels.");
-Console.WriteLine("indent         Displays the tree with an indent of five characters.");
-Console.WriteLine("double         Displays the tree with double-line style connectors.");
-Console.WriteLine("colors         Displays the tree in Technicolor.");
-Console.WriteLine("custom         Displays some of the customization potential.");
+Console.WriteLine("basics ....... Displays the tree with the default settings.");
+Console.WriteLine("levels ....... Displays the tree with a maximum of three levels.");
+Console.WriteLine("indent ....... Displays the tree with an indent of five characters.");
+Console.WriteLine("double ....... Displays the tree with double-line style connectors.");
+Console.WriteLine("colors ....... Displays the tree in Technicolor\u00ae.");
+Console.WriteLine("custom ....... Displays some of the customization potential.");
+Console.WriteLine("fluent ....... Displays a tree with different types of nodes.");
