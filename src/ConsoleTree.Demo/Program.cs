@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022 Maurizio Basaglia
+﻿// Copyright (c) 2022-2025 Maurizio Basaglia
 //
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation

@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022 Maurizio Basaglia
+﻿// Copyright (c) 2022-2025 Maurizio Basaglia
 //
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
@@ -21,44 +21,43 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 // OTHER DEALINGS IN THE SOFTWARE.
 
-namespace ConsoleTree
+namespace ConsoleTree;
+
+/// <summary>
+///     Provides methods to compose the characters patterns to represent the lines that connect the nodes of a tree
+///     structure.
+/// </summary>
+public interface IConnectorPatterns
 {
 	/// <summary>
-	///     Provides methods to compose the characters patterns to represent the lines that connect the nodes of a tree
-	///     structure.
+	///     Returns the characters pattern to represent a blank space.
 	/// </summary>
-	public interface IConnectorPatterns
-	{
-		/// <summary>
-		///     Returns the characters pattern to represent a blank space.
-		/// </summary>
-		/// <param name="indent">The amount of characters by which the level of the tree structure must be indented.</param>
-		/// <param name="level">The level of the tree structure being written.</param>
-		/// <returns>The characters pattern.</returns>
-		string GetBlank(byte indent, int level);
+	/// <param name="indent">The amount of characters by which the level of the tree structure must be indented.</param>
+	/// <param name="level">The level of the tree structure being written.</param>
+	/// <returns>The characters pattern.</returns>
+	string GetBlank(byte indent, int level);
 
-		/// <summary>
-		///     Returns the characters pattern to represent a vertical line.
-		/// </summary>
-		/// <param name="indent">The amount of characters by which the level of the tree structure must be indented.</param>
-		/// <param name="level">The level of the tree structure being written.</param>
-		/// <returns>The characters pattern.</returns>
-		string GetVertical(byte indent, int level);
+	/// <summary>
+	///     Returns the characters pattern to represent a vertical line.
+	/// </summary>
+	/// <param name="indent">The amount of characters by which the level of the tree structure must be indented.</param>
+	/// <param name="level">The level of the tree structure being written.</param>
+	/// <returns>The characters pattern.</returns>
+	string GetVertical(byte indent, int level);
 
-		/// <summary>
-		///     Returns the characters pattern to represent a vertical line with a right connection.
-		/// </summary>
-		/// <param name="indent">The amount of characters by which the level of the tree structure must be indented.</param>
-		/// <param name="level">The level of the tree structure being written.</param>
-		/// <returns>The characters pattern.</returns>
-		string GetVerticalAndRight(byte indent, int level);
+	/// <summary>
+	///     Returns the characters pattern to represent a vertical line with a right connection.
+	/// </summary>
+	/// <param name="indent">The amount of characters by which the level of the tree structure must be indented.</param>
+	/// <param name="level">The level of the tree structure being written.</param>
+	/// <returns>The characters pattern.</returns>
+	string GetVerticalAndRight(byte indent, int level);
 
-		/// <summary>
-		///     Returns the characters pattern to represent a connection from upside to right.
-		/// </summary>
-		/// <param name="indent">The amount of characters by which the level of the tree structure must be indented.</param>
-		/// <param name="level">The level of the tree structure being written.</param>
-		/// <returns>The characters pattern.</returns>
-		string GetUpAndRight(byte indent, int level);
-	}
+	/// <summary>
+	///     Returns the characters pattern to represent a connection from upside to right.
+	/// </summary>
+	/// <param name="indent">The amount of characters by which the level of the tree structure must be indented.</param>
+	/// <param name="level">The level of the tree structure being written.</param>
+	/// <returns>The characters pattern.</returns>
+	string GetUpAndRight(byte indent, int level);
 }

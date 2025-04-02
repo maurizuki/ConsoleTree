@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022 Maurizio Basaglia
+﻿// Copyright (c) 2022-2025 Maurizio Basaglia
 //
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
@@ -23,17 +23,16 @@
 
 using System.Collections.Generic;
 
-namespace ConsoleTree
+namespace ConsoleTree;
+
+/// <summary>
+///     Defines the node of a tree structure.
+/// </summary>
+public interface ITreeNode
 {
 	/// <summary>
-	///     Defines the node of a tree structure.
+	///     Returns a collection of the subnodes of the node.
 	/// </summary>
-	public interface ITreeNode
-	{
-		/// <summary>
-		///     Returns a collection of the subnodes of the node.
-		/// </summary>
-		/// <returns>A collection of the subnodes of the node.</returns>
-		IEnumerable<ITreeNode> GetNodes();
-	}
+	/// <returns>A collection of the subnodes of the node.</returns>
+	IEnumerable<ITreeNode> GetNodes();
 }

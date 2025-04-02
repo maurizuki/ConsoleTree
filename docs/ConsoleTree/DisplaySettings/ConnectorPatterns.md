@@ -3,7 +3,7 @@
 Gets or sets an implementation of [`IConnectorPatterns`](../IConnectorPatterns.md) used to write the lines that connect the nodes of the tree structure. [`SingleConnectorPatterns`](../../ConsoleTree.Patterns/SingleConnectorPatterns.md) is used if it is not assigned.
 
 ```csharp
-public IConnectorPatterns ConnectorPatterns { get; set; }
+public IConnectorPatterns? ConnectorPatterns { get; set; }
 ```
 
 ## See Also

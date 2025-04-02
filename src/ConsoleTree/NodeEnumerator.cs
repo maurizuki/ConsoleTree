@@ -22,43 +22,31 @@
 // OTHER DEALINGS IN THE SOFTWARE.
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ConsoleTree;
 
-/// <summary>
-///     Provides a convenient way to store the settings of both foreground and background colors of the console.
-/// </summary>
-public sealed class ConsoleColors
+internal interface INodeEnumerator
 {
-	/// <summary>
-	///     Gets or sets the setting value for the foreground color of the console.
-	/// </summary>
-	public ConsoleColor ForegroundColor { get; set; } = ConsoleColor.Gray;
+	void Invoke(Tree tree, object node, string indentation, int level);
+}
 
-	/// <summary>
-	///     Gets or sets the setting value for the background color of the console.
-	/// </summary>
-	public ConsoleColor BackgroundColor { get; set; } = ConsoleColor.Black;
-
-	/// <summary>
-	///     Creates a new instance of the <c>ConsoleColors</c> class with the current color settings of the console.
-	/// </summary>
-	/// <returns>A new instance of the <c>ConsoleColors</c> class</returns>
-	public static ConsoleColors FromConsole()
+internal sealed class NodeEnumerator<T, TSub>(Func<T, int, IEnumerable<TSub>> nodeEnumerator) : INodeEnumerator
+{
+	public void Invoke(Tree tree, object node, string indentation, int level)
 	{
-		return new ConsoleColors
+		if (node is not T treeNode) return;
+
+		var nodes = nodeEnumerator.Invoke(treeNode, level).ToList();
+
+		if (nodes.Count == 0) return;
+
+		for (var i = 0; i < nodes.Count - 1; i++)
 		{
-			ForegroundColor = Console.ForegroundColor,
-			BackgroundColor = Console.BackgroundColor,
-		};
-	}
+			tree.Write(nodes[i]!, indentation, level, false);
+		}
 
-	/// <summary>
-	///     Applies the color settings to the console.
-	/// </summary>
-	public void Apply()
-	{
-		Console.ForegroundColor = ForegroundColor;
-		Console.BackgroundColor = BackgroundColor;
+		tree.Write(nodes.Last()!, indentation, level, true);
 	}
 }
