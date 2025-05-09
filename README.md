@@ -26,27 +26,18 @@ Implement the `ITreeNode` interface to obtain the node of a tree structure. Opti
 class TreeNode : ITreeNode
 {
 	public string Text { get; set; }
-	public List<TreeNode> Nodes { get; set; } = new List<TreeNode>();
 
-	public IEnumerable<ITreeNode> GetNodes()
-	{
-		return Nodes;
-	}
+	public List<TreeNode> Nodes { get; set; }
 
-	public override string ToString()
-	{
-		return Text;
-	}
+	public IEnumerable<ITreeNode> GetNodes() => Nodes;
+
+	public override string ToString() => Text;
 }
 
 var tree = new TreeNode
 {
 	Text = "a",
-	Nodes = new List<TreeNode>
-	{
-		new TreeNode { Text = "b"},
-		new TreeNode { Text = "c"}
-	}
+	Nodes = [new TreeNode { Text = "b" }, new TreeNode { Text = "c" }]
 };
 
 Tree.Write(tree, new DisplaySettings { IndentSize = 2 });
@@ -61,20 +52,17 @@ Tree.Write(tree, new DisplaySettings { IndentSize = 2 });
 If it is not possible or not desired to implement the `ITreeNode` interface, then use the `Tree.Write<T>` method overloads.
 
 ```csharp
-sealed class TreeNode
+class TreeNode
 {
 	public string Text { get; set; }
-	public List<TreeNode> Nodes { get; set; } = new List<TreeNode>();
+
+	public List<TreeNode> Nodes { get; set; }
 }
 
 var tree = new TreeNode
 {
 	Text = "a",
-	Nodes = new List<TreeNode>
-	{
-		new TreeNode { Text = "b"},
-		new TreeNode { Text = "c"}
-	}
+	Nodes = [new TreeNode { Text = "b" }, new TreeNode { Text = "c" }]
 };
 
 Tree.Write(tree, (node, level) => Console.Write(node.Text), (node, level) => node.Nodes, new DisplaySettings { IndentSize = 2 });
