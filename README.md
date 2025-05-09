@@ -81,6 +81,43 @@ Tree.Write(taxonomy, (node, _) => Console.Write(node.Name), (node, _) => node.Me
 // ├──Felinae
 // └──Pantherinae
 ```
+If there are multiple types of nodes in the tree structure, then use the fluent interface methods.
+
+```csharp
+class Family
+{
+	public string Name { get; set; }
+
+	public List<Subfamily> Members { get; set; }
+}
+
+class Subfamily
+{
+	public string Name { get; set; }
+}
+
+var taxonomy = new Family
+{
+	Name = "Felidae",
+	Members =
+	[
+		new Subfamily { Name = "Felinae" },
+		new Subfamily { Name = "Pantherinae" }
+	]
+};
+
+new Tree(new DisplaySettings { IndentSize = 2 })
+	.WriteNode<Family>((node, _) => Console.Write(node.Name))
+	.EnumNodes<Family, Subfamily>((node, _) => node.Members)
+	.WriteNode<Subfamily>((node, _) => Console.Write(node.Name))
+	.Write(taxonomy);
+
+// Output:
+//
+// Felidae
+// ├──Felinae
+// └──Pantherinae
+```
 
 ## Resources
 
