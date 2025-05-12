@@ -21,6 +21,7 @@
     <PackageIcon>icon.png</PackageIcon>
     <LangVersion>12.0</LangVersion>
     <Nullable>enable</Nullable>
+    <PackageReleaseNotes>New fluent interface to handle tree structures with multiple types of nodes.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
