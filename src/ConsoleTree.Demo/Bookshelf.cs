@@ -21,18 +21,22 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 // OTHER DEALINGS IN THE SOFTWARE.
 
-using System.Collections.Generic;
+namespace ConsoleTree.Demo;
 
-namespace ConsoleTree;
+internal class Bookshelf : List<BookSeries>;
 
-/// <summary>
-///     Defines the node of a tree structure.
-/// </summary>
-public interface ITreeNode
+internal class BookSeries
 {
-	/// <summary>
-	///     Returns a collection of the subnodes of the node.
-	/// </summary>
-	/// <returns>A collection of the subnodes of the node.</returns>
-	IEnumerable<ITreeNode> GetNodes();
+	public required string Name { get; init; }
+
+	public required string Author { get; init; }
+
+	public List<Book> Books { get; init; } = [];
+}
+
+internal class Book
+{
+	public required string Title { get; init; }
+
+	public int Published { get; init; }
 }

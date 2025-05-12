@@ -25,40 +25,15 @@ using System;
 
 namespace ConsoleTree;
 
-/// <summary>
-///     Provides a convenient way to store the settings of both foreground and background colors of the console.
-/// </summary>
-public sealed class ConsoleColors
+internal interface INodeWriter
 {
-	/// <summary>
-	///     Gets or sets the setting value for the foreground color of the console.
-	/// </summary>
-	public ConsoleColor ForegroundColor { get; set; } = ConsoleColor.Gray;
+	void Invoke(object node, int level);
+}
 
-	/// <summary>
-	///     Gets or sets the setting value for the background color of the console.
-	/// </summary>
-	public ConsoleColor BackgroundColor { get; set; } = ConsoleColor.Black;
-
-	/// <summary>
-	///     Creates a new instance of the <c>ConsoleColors</c> class with the current color settings of the console.
-	/// </summary>
-	/// <returns>A new instance of the <c>ConsoleColors</c> class</returns>
-	public static ConsoleColors FromConsole()
+internal sealed class NodeWriter<T>(Action<T, int> nodeWriter) : INodeWriter
+{
+	public void Invoke(object node, int level)
 	{
-		return new ConsoleColors
-		{
-			ForegroundColor = Console.ForegroundColor,
-			BackgroundColor = Console.BackgroundColor,
-		};
-	}
-
-	/// <summary>
-	///     Applies the color settings to the console.
-	/// </summary>
-	public void Apply()
-	{
-		Console.ForegroundColor = ForegroundColor;
-		Console.BackgroundColor = BackgroundColor;
+		if (node is T treeNode) nodeWriter.Invoke(treeNode, level);
 	}
 }

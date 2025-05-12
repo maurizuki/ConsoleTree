@@ -1,21 +1,34 @@
-# Tree.Write method (1 of 3)
+# Tree.Write method (1 of 4)
 
 Writes a tree structure to the console output stream.
 
 ```csharp
-public static void Write(ITreeNode rootNode, DisplaySettings settings = null)
+public void Write(object rootNode)
+```
+
+| parameter | description |
+| --- | --- |
+| rootNode | The root node of the tree structure. |
+
+## See Also
+
+* class [Tree](../Tree.md)
+* namespace [ConsoleTree](../../ConsoleTree.md)
+
+---
+
+# Tree.Write method (2 of 4)
+
+Writes a tree structure to the console output stream.
+
+```csharp
+public static void Write(ITreeNode rootNode, DisplaySettings? settings = null)
 ```
 
 | parameter | description |
 | --- | --- |
 | rootNode | The root node of the tree structure. |
 | settings | The [`DisplaySettings`](../DisplaySettings.md) used to write the tree structure to the console output stream. |
-
-## Exceptions
-
-| exception | condition |
-| --- | --- |
-| ArgumentNullException | `rootNode` is `null`. |
 
 ## See Also
 
@@ -26,13 +39,13 @@ public static void Write(ITreeNode rootNode, DisplaySettings settings = null)
 
 ---
 
-# Tree.Write&lt;T&gt; method (2 of 3)
+# Tree.Write&lt;T&gt; method (3 of 4)
 
 Writes a tree structure to the console output stream using a custom function to enumerate the subnodes of each node.
 
 ```csharp
 public static void Write<T>(T rootNode, Func<T, int, IEnumerable<T>> nodeEnumerator, 
-    DisplaySettings settings = null)
+    DisplaySettings? settings = null)
 ```
 
 | parameter | description |
@@ -46,7 +59,7 @@ public static void Write<T>(T rootNode, Func<T, int, IEnumerable<T>> nodeEnumera
 
 | exception | condition |
 | --- | --- |
-| ArgumentNullException | `rootNode` is `null` or `nodeEnumerator` is `null`. |
+| ArgumentNullException | `rootNode` is `null`. |
 
 ## See Also
 
@@ -56,13 +69,13 @@ public static void Write<T>(T rootNode, Func<T, int, IEnumerable<T>> nodeEnumera
 
 ---
 
-# Tree.Write&lt;T&gt; method (3 of 3)
+# Tree.Write&lt;T&gt; method (4 of 4)
 
 Writes a tree structure to the console output stream using a custom method to write the text of each node and a custom function to enumerate the subnodes of each node.
 
 ```csharp
 public static void Write<T>(T rootNode, Action<T, int> nodeWriter, 
-    Func<T, int, IEnumerable<T>> nodeEnumerator, DisplaySettings settings = null)
+    Func<T, int, IEnumerable<T>> nodeEnumerator, DisplaySettings? settings = null)
 ```
 
 | parameter | description |
@@ -77,7 +90,7 @@ public static void Write<T>(T rootNode, Action<T, int> nodeWriter,
 
 | exception | condition |
 | --- | --- |
-| ArgumentNullException | `rootNode` is `null` or `nodeTextWriter` is `null` or `nodeEnumerator` is `null`. |
+| ArgumentNullException | `rootNode` is `null`. |
 
 ## See Also
 

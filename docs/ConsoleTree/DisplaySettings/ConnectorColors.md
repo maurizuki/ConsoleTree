@@ -3,7 +3,7 @@
 Gets or sets the [`ConsoleColors`](../ConsoleColors.md) that specifies the color settings of the console used to write the lines that connect the nodes of the tree structure. The current console colors are used if it is not assigned.
 
 ```csharp
-public ConsoleColors ConnectorColors { get; set; }
+public ConsoleColors? ConnectorColors { get; set; }
 ```
 
 ## See Also

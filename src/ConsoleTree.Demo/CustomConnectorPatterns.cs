@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022 Maurizio Basaglia
+﻿// Copyright (c) 2022-2025 Maurizio Basaglia
 //
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
@@ -21,30 +21,29 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 // OTHER DEALINGS IN THE SOFTWARE.
 
-namespace ConsoleTree.Demo
+namespace ConsoleTree.Demo;
+
+internal class CustomConnectorPatterns : IConnectorPatterns
 {
-	internal class CustomConnectorPatterns : IConnectorPatterns
+	public string GetBlank(byte indent, int level)
 	{
-		public string GetBlank(byte indent, int level)
-		{
-			return new string(' ', indent + 1 + level);
-		}
+		return new string(' ', indent + 1 + level);
+	}
 
-		public string GetVertical(byte indent, int level)
-		{
-			return (level % 2 == 0 ? "│" : "║") + new string(' ', indent + level);
-		}
+	public string GetVertical(byte indent, int level)
+	{
+		return (level % 2 == 0 ? "│" : "║") + new string(' ', indent + level);
+	}
 
-		public string GetVerticalAndRight(byte indent, int level)
-		{
-			if (level % 2 == 0) return "├" + new string('─', indent + level);
-			return "╠" + new string('═', indent + level);
-		}
+	public string GetVerticalAndRight(byte indent, int level)
+	{
+		if (level % 2 == 0) return "├" + new string('─', indent + level);
+		return "╠" + new string('═', indent + level);
+	}
 
-		public string GetUpAndRight(byte indent, int level)
-		{
-			if (level % 2 == 0) return "└" + new string('─', indent + level);
-			return "╚" + new string('═', indent + level);
-		}
+	public string GetUpAndRight(byte indent, int level)
+	{
+		if (level % 2 == 0) return "└" + new string('─', indent + level);
+		return "╚" + new string('═', indent + level);
 	}
 }

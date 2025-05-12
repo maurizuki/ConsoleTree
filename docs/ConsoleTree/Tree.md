@@ -3,13 +3,17 @@
 Provides methods to write a tree structure to the console output stream.
 
 ```csharp
-public static class Tree
+public sealed class Tree
 ```
 
 ## Public Members
 
 | name | description |
 | --- | --- |
+| [Tree](Tree/Tree.md)(…) | Initializes a new instance of the `Tree` class. |
+| [EnumNodes&lt;T,TSub&gt;](Tree/EnumNodes.md)(…) | Adds a function to return the subnodes of each node of type `T` of the tree structure. |
+| [Write](Tree/Write.md)(…) | Writes a tree structure to the console output stream. |
+| [WriteNode&lt;T&gt;](Tree/WriteNode.md)(…) | Adds a method to write the text of each node of type `T` of the tree structure to the console output stream. |
 | static [Write](Tree/Write.md)(…) | Writes a tree structure to the console output stream. |
 | static [Write&lt;T&gt;](Tree/Write.md)(…) | Writes a tree structure to the console output stream using a custom function to enumerate the subnodes of each node. (2 methods) |
 

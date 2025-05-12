@@ -7,8 +7,8 @@
     <Authors>Maurizio Basaglia</Authors>
     <Description>A tool to write a tree structure to the console standard output stream, with colors support and a lot of customization options.</Description>
     <PackageTags>cli;console;tree</PackageTags>
-    <Version>1.0.0</Version>
-    <Copyright>© 2022 Maurizio Basaglia</Copyright>
+    <Version>2.0.0</Version>
+    <Copyright>© 2022-2025 Maurizio Basaglia</Copyright>
     <PackageProjectUrl>https://github.com/maurizuki/ConsoleTree</PackageProjectUrl>
     <RepositoryUrl>https://github.com/maurizuki/ConsoleTree</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -19,6 +19,9 @@
     <Title>ConsoleTree</Title>
     <Product>ConsoleTree</Product>
     <PackageIcon>icon.png</PackageIcon>
+    <LangVersion>12.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <PackageReleaseNotes>New fluent interface to handle tree structures with multiple types of nodes.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>

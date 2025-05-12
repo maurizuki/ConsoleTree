@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022 Maurizio Basaglia
+﻿// Copyright (c) 2022-2025 Maurizio Basaglia
 //
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
@@ -21,55 +21,54 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 // OTHER DEALINGS IN THE SOFTWARE.
 
-namespace ConsoleTree.Patterns
+namespace ConsoleTree.Patterns;
+
+/// <summary>
+///     <see cref="IConnectorPatterns" /> implementation to write double-line connectors.
+/// </summary>
+public sealed class DoubleConnectorPatterns : IConnectorPatterns
 {
 	/// <summary>
-	///     <see cref="IConnectorPatterns" /> implementation to write double-line connectors.
+	///     Returns the characters pattern to represent a blank space.
 	/// </summary>
-	public sealed class DoubleConnectorPatterns : IConnectorPatterns
+	/// <param name="indent">The amount of characters by which the level of the tree structure must be indented.</param>
+	/// <param name="level">The level of the tree structure being written.</param>
+	/// <returns>The characters pattern.</returns>
+	public string GetBlank(byte indent, int level)
 	{
-		/// <summary>
-		///     Returns the characters pattern to represent a blank space.
-		/// </summary>
-		/// <param name="indent">The amount of characters by which the level of the tree structure must be indented.</param>
-		/// <param name="level">The level of the tree structure being written.</param>
-		/// <returns>The characters pattern.</returns>
-		public string GetBlank(byte indent, int level)
-		{
-			return new string(' ', indent + 1);
-		}
+		return new string(' ', indent + 1);
+	}
 
-		/// <summary>
-		///     Returns the characters pattern to represent a vertical line.
-		/// </summary>
-		/// <param name="indent">The amount of characters by which the level of the tree structure must be indented.</param>
-		/// <param name="level">The level of the tree structure being written.</param>
-		/// <returns>The characters pattern.</returns>
-		public string GetVertical(byte indent, int level)
-		{
-			return "║" + new string(' ', indent);
-		}
+	/// <summary>
+	///     Returns the characters pattern to represent a vertical line.
+	/// </summary>
+	/// <param name="indent">The amount of characters by which the level of the tree structure must be indented.</param>
+	/// <param name="level">The level of the tree structure being written.</param>
+	/// <returns>The characters pattern.</returns>
+	public string GetVertical(byte indent, int level)
+	{
+		return "║" + new string(' ', indent);
+	}
 
-		/// <summary>
-		///     Returns the characters pattern to represent a vertical line with a right connection.
-		/// </summary>
-		/// <param name="indent">The amount of characters by which the level of the tree structure must be indented.</param>
-		/// <param name="level">The level of the tree structure being written.</param>
-		/// <returns>The characters pattern.</returns>
-		public string GetVerticalAndRight(byte indent, int level)
-		{
-			return "╠" + new string('═', indent);
-		}
+	/// <summary>
+	///     Returns the characters pattern to represent a vertical line with a right connection.
+	/// </summary>
+	/// <param name="indent">The amount of characters by which the level of the tree structure must be indented.</param>
+	/// <param name="level">The level of the tree structure being written.</param>
+	/// <returns>The characters pattern.</returns>
+	public string GetVerticalAndRight(byte indent, int level)
+	{
+		return "╠" + new string('═', indent);
+	}
 
-		/// <summary>
-		///     Returns the characters pattern to represent a connection from upside to right.
-		/// </summary>
-		/// <param name="indent">The amount of characters by which the level of the tree structure must be indented.</param>
-		/// <param name="level">The level of the tree structure being written.</param>
-		/// <returns>The characters pattern.</returns>
-		public string GetUpAndRight(byte indent, int level)
-		{
-			return "╚" + new string('═', indent);
-		}
+	/// <summary>
+	///     Returns the characters pattern to represent a connection from upside to right.
+	/// </summary>
+	/// <param name="indent">The amount of characters by which the level of the tree structure must be indented.</param>
+	/// <param name="level">The level of the tree structure being written.</param>
+	/// <returns>The characters pattern.</returns>
+	public string GetUpAndRight(byte indent, int level)
+	{
+		return "╚" + new string('═', indent);
 	}
 }

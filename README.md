@@ -23,67 +23,100 @@ More options are available on the [ConsoleTree page](https://www.nuget.org/packa
 Implement the `ITreeNode` interface to obtain the node of a tree structure. Optionally override the `ToString` method to provide a custom text for the node. To write a tree structure to the console standard output stream, call the `Tree.Write` method specifying its root node as parameter.
 
 ```csharp
-class TreeNode : ITreeNode
+class TaxonomicRank : ITreeNode
 {
-	public string Text { get; set; }
-	public List<TreeNode> Nodes { get; set; } = new List<TreeNode>();
+	public string Name { get; set; }
 
-	public IEnumerable<ITreeNode> GetNodes()
-	{
-		return Nodes;
-	}
+	public List<TaxonomicRank> Members { get; set; }
 
-	public override string ToString()
-	{
-		return Text;
-	}
+	public IEnumerable<ITreeNode> GetNodes() => Members;
+
+	public override string ToString() => Name;
 }
 
-var tree = new TreeNode
+var taxonomy = new TaxonomicRank
 {
-	Text = "a",
-	Nodes = new List<TreeNode>
-	{
-		new TreeNode { Text = "b"},
-		new TreeNode { Text = "c"}
-	}
+	Name = "Felidae",
+	Members =
+	[
+		new TaxonomicRank { Name = "Felinae" },
+		new TaxonomicRank { Name = "Pantherinae" }
+	]
 };
 
-Tree.Write(tree, new DisplaySettings { IndentSize = 2 });
+Tree.Write(taxonomy, new DisplaySettings { IndentSize = 2 });
 
 // Output:
 //
-// a
-// ├──b
-// └──c
+// Felidae
+// ├──Felinae
+// └──Pantherinae
 ```
 
 If it is not possible or not desired to implement the `ITreeNode` interface, then use the `Tree.Write<T>` method overloads.
 
 ```csharp
-sealed class TreeNode
+class TaxonomicRank
 {
-	public string Text { get; set; }
-	public List<TreeNode> Nodes { get; set; } = new List<TreeNode>();
+	public string Name { get; set; }
+
+	public List<TaxonomicRank> Members { get; set; }
 }
 
-var tree = new TreeNode
+var taxonomy = new TaxonomicRank
 {
-	Text = "a",
-	Nodes = new List<TreeNode>
-	{
-		new TreeNode { Text = "b"},
-		new TreeNode { Text = "c"}
-	}
+	Name = "Felidae",
+	Members =
+	[
+		new TaxonomicRank { Name = "Felinae" },
+		new TaxonomicRank { Name = "Pantherinae" }
+	]
 };
 
-Tree.Write(tree, (node, level) => Console.Write(node.Text), (node, level) => node.Nodes, new DisplaySettings { IndentSize = 2 });
+Tree.Write(taxonomy, (node, _) => Console.Write(node.Name), (node, _) => node.Members, new DisplaySettings { IndentSize = 2 });
 
 // Output:
 //
-// a
-// ├──b
-// └──c
+// Felidae
+// ├──Felinae
+// └──Pantherinae
+```
+If there are multiple types of nodes in the tree structure, then use the fluent interface methods.
+
+```csharp
+class Family
+{
+	public string Name { get; set; }
+
+	public List<Subfamily> Members { get; set; }
+}
+
+class Subfamily
+{
+	public string Name { get; set; }
+}
+
+var taxonomy = new Family
+{
+	Name = "Felidae",
+	Members =
+	[
+		new Subfamily { Name = "Felinae" },
+		new Subfamily { Name = "Pantherinae" }
+	]
+};
+
+new Tree(new DisplaySettings { IndentSize = 2 })
+	.WriteNode<Family>((node, _) => Console.Write(node.Name))
+	.EnumNodes<Family, Subfamily>((node, _) => node.Members)
+	.WriteNode<Subfamily>((node, _) => Console.Write(node.Name))
+	.Write(taxonomy);
+
+// Output:
+//
+// Felidae
+// ├──Felinae
+// └──Pantherinae
 ```
 
 ## Resources

@@ -3,7 +3,7 @@
 Gets or sets the [`ConsoleColors`](../ConsoleColors.md) that specifies the color settings of the console used to write the text of each node of the tree structure. The current console colors are used if it is not assigned.
 
 ```csharp
-public ConsoleColors NodeColors { get; set; }
+public ConsoleColors? NodeColors { get; set; }
 ```
 
 ## See Also

@@ -8,7 +8,7 @@
 | class [DisplaySettings](./ConsoleTree/DisplaySettings.md) | Specifies the settings to use to write a tree structure to the console output stream. |
 | interface [IConnectorPatterns](./ConsoleTree/IConnectorPatterns.md) | Provides methods to compose the characters patterns to represent the lines that connect the nodes of a tree structure. |
 | interface [ITreeNode](./ConsoleTree/ITreeNode.md) | Defines the node of a tree structure. |
-| static class [Tree](./ConsoleTree/Tree.md) | Provides methods to write a tree structure to the console output stream. |
+| class [Tree](./ConsoleTree/Tree.md) | Provides methods to write a tree structure to the console output stream. |
 
 ## ConsoleTree.Patterns namespace
 

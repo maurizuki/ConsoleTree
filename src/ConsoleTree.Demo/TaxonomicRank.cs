@@ -1,4 +1,4 @@
-﻿// Copyright (c) 2022 Maurizio Basaglia
+﻿// Copyright (c) 2022-2025 Maurizio Basaglia
 //
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
@@ -21,33 +21,32 @@
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 // OTHER DEALINGS IN THE SOFTWARE.
 
-namespace ConsoleTree.Demo
+namespace ConsoleTree.Demo;
+
+internal enum TaxonomicRankCategory
 {
-	internal enum TaxonomicRankCategory
+	Family,
+	Subfamily,
+	Genus,
+	Species,
+	Subspecies,
+}
+
+internal class TaxonomicRank : ITreeNode
+{
+	public TaxonomicRankCategory Category { get; init; } = TaxonomicRankCategory.Species;
+
+	public string? Name { get; init; }
+
+	public List<TaxonomicRank> Members { get; init; } = [];
+
+	public IEnumerable<ITreeNode> GetNodes()
 	{
-		Family,
-		Subfamily,
-		Genus,
-		Species,
-		Subspecies,
+		return Members;
 	}
 
-	internal class TaxonomicRank : ITreeNode
+	public override string ToString()
 	{
-		public TaxonomicRankCategory Category { get; set; } = TaxonomicRankCategory.Species;
-
-		public string? Name { get; set; }
-
-		public List<TaxonomicRank> Members { get; set; } = new();
-
-		public IEnumerable<ITreeNode> GetNodes()
-		{
-			return Members;
-		}
-
-		public override string ToString()
-		{
-			return $"{Category}: {Name}";
-		}
+		return $"{Category}: {Name}";
 	}
 }
