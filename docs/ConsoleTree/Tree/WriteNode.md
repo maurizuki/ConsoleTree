@@ -1,6 +1,6 @@
 # Tree.WriteNode&lt;T&gt; method
 
-Adds a method to write the text of each node of type `T` of the tree structure to the console output stream.
+Adds a method to write the text of each node of type *T* of the tree structure to the console output stream.
 
 ```csharp
 public Tree WriteNode<T>(Action<T, int> nodeWriter)
@@ -9,7 +9,7 @@ public Tree WriteNode<T>(Action<T, int> nodeWriter)
 | parameter | description |
 | --- | --- |
 | T | The type of the nodes of the tree structure. |
-| nodeWriter | A method to write the text of each node of type `T` of the tree structure to the console output stream. |
+| nodeWriter | A method to write the text of each node of type *T* of the tree structure to the console output stream. |
 
 ## See Also
 

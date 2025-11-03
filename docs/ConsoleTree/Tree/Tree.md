@@ -1,6 +1,6 @@
 # Tree constructor
 
-Initializes a new instance of the `Tree` class.
+Initializes a new instance of the [`Tree`](../Tree.md) class.
 
 ```csharp
 public Tree(DisplaySettings? settings = null)

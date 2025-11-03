@@ -1,6 +1,6 @@
 # ConsoleColors.FromConsole method
 
-Creates a new instance of the `ConsoleColors` class with the current color settings of the console.
+Creates a new instance of the [`ConsoleColors`](../ConsoleColors.md) class with the current color settings of the console.
 
 ```csharp
 public static ConsoleColors FromConsole()
@@ -8,7 +8,7 @@ public static ConsoleColors FromConsole()
 
 ## Return Value
 
-A new instance of the `ConsoleColors` class
+A new instance of the [`ConsoleColors`](../ConsoleColors.md) class
 
 ## See Also
 

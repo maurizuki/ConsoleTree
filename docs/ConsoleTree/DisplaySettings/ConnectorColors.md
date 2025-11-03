@@ -6,6 +6,10 @@ Gets or sets the [`ConsoleColors`](../ConsoleColors.md) that specifies the color
 public ConsoleColors? ConnectorColors { get; set; }
 ```
 
+## Return Value
+
+The [`ConsoleColors`](../ConsoleColors.md) that specifies the color settings of the console used to write the lines that connect the nodes of the tree structure.
+
 ## See Also
 
 * class [ConsoleColors](../ConsoleColors.md)

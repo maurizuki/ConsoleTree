@@ -6,6 +6,10 @@ Gets or sets the amount of characters by which each level in the tree structure 
 public byte IndentSize { get; set; }
 ```
 
+## Return Value
+
+The amount of characters by which each level in the tree structure is indented.
+
 ## See Also
 
 * class [DisplaySettings](../DisplaySettings.md)

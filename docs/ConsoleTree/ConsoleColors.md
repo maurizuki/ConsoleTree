@@ -11,7 +11,7 @@ public sealed class ConsoleColors
 | name | description |
 | --- | --- |
 | [ConsoleColors](ConsoleColors/ConsoleColors.md)() | The default constructor. |
-| static [FromConsole](ConsoleColors/FromConsole.md)() | Creates a new instance of the `ConsoleColors` class with the current color settings of the console. |
+| static [FromConsole](ConsoleColors/FromConsole.md)() | Creates a new instance of the [`ConsoleColors`](./ConsoleColors.md) class with the current color settings of the console. |
 | [BackgroundColor](ConsoleColors/BackgroundColor.md) { get; set; } | Gets or sets the setting value for the background color of the console. |
 | [ForegroundColor](ConsoleColors/ForegroundColor.md) { get; set; } | Gets or sets the setting value for the foreground color of the console. |
 | [Apply](ConsoleColors/Apply.md)() | Applies the color settings to the console. |

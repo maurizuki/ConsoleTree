@@ -59,7 +59,7 @@ public static void Write<T>(T rootNode, Func<T, int, IEnumerable<T>> nodeEnumera
 
 | exception | condition |
 | --- | --- |
-| ArgumentNullException | `rootNode` is `null`. |
+| ArgumentNullException | *rootNode* is `null`. |
 
 ## See Also
 
@@ -90,7 +90,7 @@ public static void Write<T>(T rootNode, Action<T, int> nodeWriter,
 
 | exception | condition |
 | --- | --- |
-| ArgumentNullException | `rootNode` is `null`. |
+| ArgumentNullException | *rootNode* is `null`. |
 
 ## See Also
 

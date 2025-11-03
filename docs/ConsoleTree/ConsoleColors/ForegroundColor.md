@@ -6,6 +6,10 @@ Gets or sets the setting value for the foreground color of the console.
 public ConsoleColor ForegroundColor { get; set; }
 ```
 
+## Return Value
+
+The setting value for the foreground color of the console.
+
 ## See Also
 
 * class [ConsoleColors](../ConsoleColors.md)

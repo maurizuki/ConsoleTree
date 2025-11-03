@@ -6,6 +6,10 @@ Gets or sets an implementation of [`IConnectorPatterns`](../IConnectorPatterns.m
 public IConnectorPatterns? ConnectorPatterns { get; set; }
 ```
 
+## Return Value
+
+An implementation of [`IConnectorPatterns`](../IConnectorPatterns.md) used to write the lines that connect the nodes of the tree structure.
+
 ## See Also
 
 * interface [IConnectorPatterns](../IConnectorPatterns.md)

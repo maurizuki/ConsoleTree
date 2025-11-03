@@ -6,6 +6,10 @@ Gets or sets the maximum number of levels of the tree structure to write. A valu
 public int MaxLevels { get; set; }
 ```
 
+## Return Value
+
+The maximum number of levels of the tree structure to write.
+
 ## See Also
 
 * class [DisplaySettings](../DisplaySettings.md)
