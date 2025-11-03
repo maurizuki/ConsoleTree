@@ -32,28 +32,42 @@ public sealed class DisplaySettings
 	///     Gets or sets the maximum number of levels of the tree structure to write. A value less than or equal to zero
 	///     indicates no limitation.
 	/// </summary>
+	/// <returns>The maximum number of levels of the tree structure to write.</returns>
 	public int MaxLevels { get; set; }
 
 	/// <summary>
 	///     Gets or sets the amount of characters by which each level in the tree structure is indented.
 	/// </summary>
+	/// <returns>The amount of characters by which each level in the tree structure is indented.</returns>
 	public byte IndentSize { get; set; }
 
 	/// <summary>
 	///     Gets or sets the <see cref="ConsoleColors" /> that specifies the color settings of the console used to write the
 	///     text of each node of the tree structure. The current console colors are used if it is not assigned.
 	/// </summary>
+	/// <returns>
+	///     The <see cref="ConsoleColors" /> that specifies the color settings of the console used to write the text of
+	///     each node of the tree structure.
+	/// </returns>
 	public ConsoleColors? NodeColors { get; set; }
 
 	/// <summary>
 	///     Gets or sets the <see cref="ConsoleColors" /> that specifies the color settings of the console used to write the
 	///     lines that connect the nodes of the tree structure. The current console colors are used if it is not assigned.
 	/// </summary>
+	/// <returns>
+	///     The <see cref="ConsoleColors" /> that specifies the color settings of the console used to write the lines that
+	///     connect the nodes of the tree structure.
+	/// </returns>
 	public ConsoleColors? ConnectorColors { get; set; }
 
 	/// <summary>
 	///     Gets or sets an implementation of <see cref="IConnectorPatterns" /> used to write the lines that connect the
 	///     nodes of the tree structure. <see cref="Patterns.SingleConnectorPatterns" /> is used if it is not assigned.
 	/// </summary>
+	/// <returns>
+	///     An implementation of <see cref="IConnectorPatterns" /> used to write the lines that connect the nodes of the
+	///     tree structure.
+	/// </returns>
 	public IConnectorPatterns? ConnectorPatterns { get; set; }
 }

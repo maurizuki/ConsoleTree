@@ -48,7 +48,7 @@ public sealed class Tree
 	private readonly IConnectorPatterns _connectorPatterns;
 
 	/// <summary>
-	///     Initializes a new instance of the <c>Tree</c> class.
+	///     Initializes a new instance of the <see cref="Tree" /> class.
 	/// </summary>
 	/// <param name="settings">
 	///     The <see cref="DisplaySettings" /> used to write the tree structure to the console output stream.
@@ -60,13 +60,13 @@ public sealed class Tree
 	}
 
 	/// <summary>
-	///     Adds a method to write the text of each node of type <c>T</c> of the tree structure to the console output
-	///     stream.
+	///     Adds a method to write the text of each node of type <typeparamref name="T" /> of the tree structure to the console
+	///     output stream.
 	/// </summary>
 	/// <typeparam name="T">The type of the nodes of the tree structure.</typeparam>
 	/// <param name="nodeWriter">
-	///     A method to write the text of each node of type <c>T</c> of the tree structure to the console output
-	///     stream.
+	///     A method to write the text of each node of type <typeparamref name="T" /> of the tree structure to the console
+	///     output stream.
 	/// </param>
 	public Tree WriteNode<T>(Action<T, int> nodeWriter)
 	{
@@ -75,12 +75,12 @@ public sealed class Tree
 	}
 
 	/// <summary>
-	///     Adds a function to return the subnodes of each node of type <c>T</c> of the tree structure.
+	///     Adds a function to return the subnodes of each node of type <typeparamref name="T" /> of the tree structure.
 	/// </summary>
 	/// <typeparam name="T">The type of the nodes of the tree structure.</typeparam>
-	/// <typeparam name="TSub">The type of the subnodes of a node of type <c>T</c>.</typeparam>
+	/// <typeparam name="TSub">The type of the subnodes of a node of type <typeparamref name="T" />.</typeparam>
 	/// <param name="nodeEnumerator">
-	///     A function to return the subnodes of each node of type <c>T</c> of the tree structure.
+	///     A function to return the subnodes of each node of type <typeparamref name="T" /> of the tree structure.
 	/// </param>
 	public Tree EnumNodes<T, TSub>(Func<T, int, IEnumerable<TSub>> nodeEnumerator)
 	{
@@ -181,7 +181,7 @@ public sealed class Tree
 	/// <param name="settings">
 	///     The <see cref="DisplaySettings" /> used to write the tree structure to the console output stream.
 	/// </param>
-	/// <exception cref="ArgumentNullException"><c>rootNode</c> is <c>null</c>.</exception>
+	/// <exception cref="ArgumentNullException"><paramref name="rootNode" /> is <c>null</c>.</exception>
 	[DebuggerStepThrough]
 	public static void Write<T>(
 		T rootNode,
@@ -208,7 +208,7 @@ public sealed class Tree
 	/// <param name="settings">
 	///     The <see cref="DisplaySettings" /> used to write the tree structure to the console output stream.
 	/// </param>
-	/// <exception cref="ArgumentNullException"><c>rootNode</c> is <c>null</c>.</exception>
+	/// <exception cref="ArgumentNullException"><paramref name="rootNode" /> is <c>null</c>.</exception>
 	[DebuggerStepThrough]
 	public static void Write<T>(
 		T rootNode,

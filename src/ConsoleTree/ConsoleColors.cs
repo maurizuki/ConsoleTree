@@ -33,17 +33,19 @@ public sealed class ConsoleColors
 	/// <summary>
 	///     Gets or sets the setting value for the foreground color of the console.
 	/// </summary>
+	/// <returns>The setting value for the foreground color of the console.</returns>
 	public ConsoleColor ForegroundColor { get; set; } = ConsoleColor.Gray;
 
 	/// <summary>
 	///     Gets or sets the setting value for the background color of the console.
 	/// </summary>
+	/// <returns>The setting value for the background color of the console.</returns>
 	public ConsoleColor BackgroundColor { get; set; } = ConsoleColor.Black;
 
 	/// <summary>
-	///     Creates a new instance of the <c>ConsoleColors</c> class with the current color settings of the console.
+	///     Creates a new instance of the <see cref="ConsoleColors" /> class with the current color settings of the console.
 	/// </summary>
-	/// <returns>A new instance of the <c>ConsoleColors</c> class</returns>
+	/// <returns>A new instance of the <see cref="ConsoleColors" /> class</returns>
 	public static ConsoleColors FromConsole()
 	{
 		return new ConsoleColors
