@@ -1,9 +1,6 @@
 # ConsoleTree
 
-[![language](https://img.shields.io/github/languages/top/maurizuki/ConsoleTree)](https://github.com/maurizuki/ConsoleTree)
-[![issues](https://img.shields.io/github/issues/maurizuki/ConsoleTree)](https://github.com/maurizuki/ConsoleTree/issues)
 [![version](https://img.shields.io/nuget/v/ConsoleTree)](https://www.nuget.org/packages/ConsoleTree)
-[![release](https://img.shields.io/github/release-date/maurizuki/ConsoleTree)](https://github.com/maurizuki/ConsoleTree/releases/latest)
 [![downloads](https://img.shields.io/nuget/dt/ConsoleTree)](https://www.nuget.org/packages/ConsoleTree)
 
 A tool to write a tree structure to the console standard output stream, with colors support and a lot of customization options.
