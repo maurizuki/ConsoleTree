@@ -4,13 +4,13 @@ A tool to write a tree structure to the console standard output stream, with col
 
 ## Getting started
 
-To add ConsoleTree to your project, you can use the following NuGet Package Manager command:
+Use the following command to add the package to a .NET project:
 
 ```PowerShell
-Install-Package ConsoleTree
+dotnet add package ConsoleTree
 ```
 
-More options are available on the [ConsoleTree page](https://www.nuget.org/packages/ConsoleTree) of the NuGet Gallery website.
+More options are available on the [package page](https://www.nuget.org/packages/ConsoleTree) of the NuGet Gallery website.
 
 ## Usage
 
